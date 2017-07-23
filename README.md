@@ -1,5 +1,7 @@
 #  uh-oh
 
+![Travis Build Status](https://travis-ci.org/fnky/uh-oh.svg?branch=master)
+
 **uh-oh** is an error handler for [Express](https://expressjs.com/) with a stylistic and useful interface for viewing application error traces.
 
 ![Preview of uh-oh's interface](https://user-images.githubusercontent.com/995050/28497800-8bc822d8-6f8f-11e7-9e34-3d67aa2163db.png)
