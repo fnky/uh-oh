@@ -1,0 +1,12 @@
+.StackView
+  .ErrorMessage #{rawError.name}: #{error.error}
+  .ListView.StackFrameListView#mainStackListView(tabindex="0" role="listbox" data-selected="0")
+    each frame, index in error.frames
+      .ListViewItem.StackFrame(role="option")
+        h3(role="button" tabindex=index + 1)= frame.function
+        div
+          a(tabindex=index + 2 rel="noopener noreferrer" target="_blank" onclick="openInEditor(this); return false" href="/open-in-editor?file=" + frame.file + ":" + frame.line + ":" + frame.column)
+            code= frame.file
+              span :#{frame.line}:#{frame.column}
+    else
+      ListViewItem.EmptyList No stack trace.

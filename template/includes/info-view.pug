@@ -1,0 +1,25 @@
+mixin contextItem (key, value)
+  .u-flex.u-fontFamilyMono.u-fontSizeSmall
+    .u-fSmall= key
+    .u-f1= value
+
+mixin section (title)
+  section.Section
+    .SectionHeader
+      h3= title
+    .SectionBody
+      if block
+        block
+
+.InfoView
+  .CodeView
+    noscript
+      include fallback-source-view.pug
+    #mainSourceView
+  .ContextView
+    +section('Application Context')
+      each entry in appContext
+        +contextItem(entry.key, entry.value)
+    +section('Request Context')
+      each entry in requestContext
+        +contextItem(entry.key, entry.value)

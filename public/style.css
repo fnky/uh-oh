@@ -1,0 +1,254 @@
+*, *::before, *::after {
+          box-sizing:border-box;
+     -moz-box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+}
+
+::selection {
+  background: #ffff00;
+  color: black;
+}
+
+::-moz-selection {
+  background: #ffff00;
+  color: black;
+}
+
+body, html {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    height: 100%;
+    max-height: 100%;
+}
+
+body {
+  font-family: -apple-system,
+                      BlinkMacSystemFont,
+                      "Segoe UI",
+                      Roboto,
+                      Oxygen,
+                      Ubuntu,
+                      Cantarell,
+                      "Open Sans",
+                      "Helvetica Neue",
+                      sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+
+  color: rgba(0,0,0,.8);
+
+  letter-spacing: 0;
+  line-height: 1.4;
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: "liga" on;
+
+  margin: 0;
+}
+
+pre, code {
+  font-family: Menlo, Monaco, "Courier New", Courier, monospace;
+}
+
+.SplitView {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.StackView {
+  flex: 0 0 380px;
+  border-right: 1px solid rgba(230, 230, 230, 0.50);
+  height: 100vh;
+}
+
+.InfoView {
+  flex: 1;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+.ErrorMessage {
+  width: 100%;
+
+  padding: 20px 15px;
+
+  background: #DA4B4B;
+  color: #ffffff;
+
+  font-weight: 600;
+}
+
+.StackFrameListView {
+  overflow-y: scroll;
+  height: calc(100vh - 62px);
+  position: relative;
+}
+
+.StackFrame {
+  padding: 15px;
+  border-bottom: 1px solid rgba(230, 230, 230, 0.50);
+  cursor: default;
+}
+
+.StackFrame h3 {
+  margin: 0 0 5px 0;
+  color: #55565E;
+
+  font-weight: 600;
+  font-size: 1em;
+}
+
+.StackFrame code {
+  font-size: 0.875em;
+  color: #908F8F;
+
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: -moz-pre-wrap;
+  white-space: pre-wrap;
+}
+
+.StackFrame a:hover {
+  text-decoration: underline;
+}
+
+.StackFrame code span {
+  font-weight: bold;
+  color: #7288C1;
+}
+
+.StackFrame a {
+  color: inherit;
+  text-decoration: none;
+  font-style: normal;
+}
+
+.StackFrame.is-selected {
+  background: #ECF0F8;
+  border-bottom-color: #D3D8E2;
+}
+
+.StackFrame.is-selected h3 {
+  color: #1B448D;
+}
+
+.StackFrame.is-selected code {
+  color: #8F98A7;
+}
+
+.Section {
+  color: #55565E;
+}
+
+.SectionHeader {
+  padding: 10px 20px;
+  background: #FAFCFF;
+}
+
+.SectionHeader h3 {
+  font-weight: 500;
+  color: #4B4E69;
+  padding: 0;
+  margin: 0;
+
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: -moz-pre;
+  white-space: pre;
+}
+
+.SectionBody {
+  padding: 20px;
+}
+
+/* Source View */
+
+.source-view {
+  display: flex;
+  font-family: Menlo, Monaco, "Courier New", Courier, monospace;
+  font-size: 13px;
+  color: #55565E;
+  background: #FFFFFF;
+  width: 100%;
+}
+
+.source-view-gutter {
+  background: #FBFBFD;
+  color: #96979F;
+  letter-spacing: 0;
+  line-height: 18px;
+  text-align: right;
+
+  width: 60px;
+
+  padding: 15px;
+}
+
+.source-view-gutter-line {}
+
+.source-view-editor {
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: -moz-pre;
+  white-space: pre;
+
+  width: 100%;
+
+  padding: 15px;
+}
+
+.source-view-editor-line {
+  position: relative;
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: -moz-pre;
+  white-space: pre;
+}
+
+.source-view-editor-line-highlighted {
+  background: rgba(255, 0, 0, 0.05);
+  box-shadow: inset 0 1px 0 0 rgba(194, 0, 0, 0.15),
+              inset 0 -1px 0 0 rgba(194, 0, 0, 0.15);
+}
+
+.source-view-error-cursor {
+  position: absolute;
+  top: 16px;
+  z-index: 1;
+
+  width: 4px;
+  height: 8px;
+
+  border: 4px solid transparent;
+  border-bottom: 4px solid red;
+}
+
+/* Utility */
+
+.u-fontFamilyMono {
+  font-family: Menlo, Monaco, "Courier New", Courier, monospace;
+}
+
+.u-fontSizeSmall {
+  font-size: 13px;
+}
+
+.u-flex {
+  display: flex;
+}
+
+.u-fSmall {
+  flex: 0 0 180px;
+}
+
+.u-f1 {
+  flex: 1
+}
+
+.u-f2 {
+  flex: 3
+}

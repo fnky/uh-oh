@@ -1,0 +1,11 @@
+#mainSourceView
+  .source-view
+    .source-view-gutter
+      each line in Object.keys(fileSource)
+        div= line
+    .source-view-editor
+      each line in Object.keys(fileSource)
+        .source-view-editor-line(class={'source-view-editor-line-highlighted': line == currentFrame.line})
+          | !{fileSource[line].code === '' ? '&nbsp;' : fileSource[line].code}
+          if line == currentFrame.line
+            .source-view-error-cursor(style={left: `${(8 * currentFrame.column) - 14}px`})

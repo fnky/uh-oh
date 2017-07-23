@@ -1,0 +1,21 @@
+- const currentFrame = error.frames[0]
+
+doctype html
+html
+  head
+    title Oops-a-daisy! - rawError.name + rawError.message
+  style
+    include ../public/normalize.css
+    include ../public/style.css
+  script.
+    function openInEditor (context) {
+      const location = context.getAttribute('href')
+      fetch(location)
+        .catch(e => { console.error(`Couldn\'t open ${location} in editor.`) })
+    }
+  body
+    block content
+    script
+      | window.errorObject = !{JSON.stringify(error)}
+    script
+      include ../public/main.js
